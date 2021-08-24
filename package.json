@@ -1,0 +1,18 @@
+{
+  "name": "promocodes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --coverage"
+  },
+  "author": "Dropp",
+  "license": "ISC",
+  "dependencies": {
+    "dinero.js": "^1.9.0",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
