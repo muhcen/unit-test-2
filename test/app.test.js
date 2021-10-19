@@ -10,8 +10,8 @@ describe("test app", () => {
       maxUsage: 10,
       currentUsage: 0,
       code: "test1",
-      startDate: "2021-08-15T11:30:00.000+00:00",
-      endDate: "2021-09-22T11:30:00.000+00:00",
+      startDate: new Date(),
+      endDate: new Date().setMonth(new Date().getMonth() + 2),
       percent: 0,
       maxDiscount: {
         //its 1 GBP
@@ -38,7 +38,7 @@ describe("test app", () => {
   });
   it("throw error : The promotion code has expired", () => {
     set();
-    promotion.endDate = "2021-08-22T11:30:00.000+00:00";
+    promotion.endDate = "2018-08-22T11:30:00.000+00:00";
 
     expect(() => {
       exc();
@@ -92,5 +92,16 @@ describe("test app", () => {
       promotion.maxUsage -
       (promotion.maxUsage * promotion.maxDiscount.amount) / 10;
     expect(res.final.amount * 1).toEqual(amount);
+  });
+
+  it("if price less 0 should return 0", () => {
+    set();
+    promotion.discount = { amount: 200, currencyCode: "GBP" };
+    promotion.maxDiscount = { amount: 200, currencyCode: "GBP" };
+    exc();
+    // const amount =
+    //   promotion.maxUsage -
+    //   (promotion.maxUsage * promotion.maxDiscount.amount) / 10;
+    expect(res.final.amount * 1).toEqual(0);
   });
 });

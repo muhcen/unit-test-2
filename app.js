@@ -128,8 +128,8 @@ module.exports = function checkCode(promotion, userId, final) {
 //     maxUsage: 10,
 //     currentUsage: 0,
 //     code: "test1",
-//     startDate: "2021-08-15T11:30:00.000+00:00",
-//     endDate: "2021-09-22T11:30:00.000+00:00",
+//     startDate: "2021-10-15T11:30:00.000+00:00",
+//     endDate: "2021-11-22T11:30:00.000+00:00",
 //     percent: 100,
 //     discount: { amount: 2, currencyCode: "GBP" },
 //     maxDiscount: {
